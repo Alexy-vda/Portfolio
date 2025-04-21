@@ -150,7 +150,7 @@ export default function RootLayout({
             { left: "40%", delay: "1s" },
             { left: "3/5", delay: "2s" },
             { left: "4/5", delay: "3s" },
-          ].map(({ left, delay }, i) => (
+          ].map(({ delay }, i) => (
             <motion.div
               key={i}
               className={`relative h-full w-px bg-gray-800 overflow-hidden`}
