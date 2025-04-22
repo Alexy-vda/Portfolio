@@ -37,7 +37,6 @@ export default function RootLayout({
           className="absolute -top-10 left-1/2 -translate-x-1/2 -z-20 w-2xl min-h-80 bg-radial-[at_50%_00%] from-blue-700 to-black to-80% opacity-70"
         ></motion.span>
         <main>{children}</main>
-        {/* Frosted multi-layer blur at bottom */}
         <div className="fixed bottom-0 left-0 right-0 h-32 pointer-events-none z-0">
           <div
             style={{
@@ -144,34 +143,101 @@ export default function RootLayout({
             }}
           />
         </div>
-        <div className="fixed inset-0 pointer-events-none -z-10 min-h-full min-w-full flex flex-row justify-around items-center">
-          {[
-            { left: "20%", delay: "0s" },
-            { left: "40%", delay: "1s" },
-            { left: "3/5", delay: "2s" },
-            { left: "4/5", delay: "3s" },
-          ].map(({ delay }, i) => (
-            <motion.div
-              key={i}
-              className={`relative h-full w-px bg-gray-800 overflow-hidden`}
-              initial={{ y: "-100%" }}
-              animate={{ y: "0%" }}
-              transition={{
-                delay: i > 0 ? i * 0.25 : i,
-                duration: 1,
-                ease: "easeInOut",
-              }}
+        <svg
+          className="absolute inset-0 pointer-events-none -z-10"
+          xmlns="http://www.w3.org/2000/svg"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient
+              id="pulseGrad"
+              gradientUnits="objectBoundingBox"
+              x1="0"
+              y1="0"
+              x2="0"
+              y2="1"
             >
-              <div
-                className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-200/20 to-transparent"
-                style={{
-                  animation: `separatorPulse 4s ease-in-out infinite`,
-                  animationDelay: 3 + delay,
-                }}
-              />
-            </motion.div>
-          ))}
-        </div>
+              <stop offset="0%" stopColor="white" stopOpacity="0" />
+              <stop offset="50%" stopColor="white" stopOpacity="0.3" />
+              <stop offset="60%" stopColor="white" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <rect x="20%" y="-100%" width="1" height="30%" fill="url(#pulseGrad)">
+            <animate
+              attributeName="y"
+              from="-100%"
+              to="100%"
+              dur="4s"
+              begin="0s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="40%" y="-100%" width="1" height="30%" fill="url(#pulseGrad)">
+            <animate
+              attributeName="y"
+              from="-100%"
+              to="100%"
+              dur="4s"
+              begin="1s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="60%" y="-100%" width="1" height="30%" fill="url(#pulseGrad)">
+            <animate
+              attributeName="y"
+              from="-100%"
+              to="100%"
+              dur="4s"
+              begin="2s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          <rect x="80%" y="-100%" width="1" height="30%" fill="url(#pulseGrad)">
+            <animate
+              attributeName="y"
+              from="-100%"
+              to="100%"
+              dur="4s"
+              begin="3s"
+              repeatCount="indefinite"
+            />
+          </rect>
+
+          <rect
+            x="20%"
+            y="0"
+            width="1"
+            height="100%"
+            fill="white"
+            opacity="0.1"
+          />
+          <rect
+            x="40%"
+            y="0"
+            width="1"
+            height="100%"
+            fill="white"
+            opacity="0.1"
+          />
+          <rect
+            x="60%"
+            y="0"
+            width="1"
+            height="100%"
+            fill="white"
+            opacity="0.1"
+          />
+          <rect
+            x="80%"
+            y="0"
+            width="1"
+            height="100%"
+            fill="white"
+            opacity="0.1"
+          />
+        </svg>
       </body>
     </html>
   );
