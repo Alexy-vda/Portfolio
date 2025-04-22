@@ -160,8 +160,8 @@ export default function RootLayout({
               y2="1"
             >
               <stop offset="0%" stopColor="white" stopOpacity="0" />
-              <stop offset="50%" stopColor="white" stopOpacity="0.3" />
-              <stop offset="60%" stopColor="white" stopOpacity="0" />
+              <stop offset="50%" stopColor="white" stopOpacity="0.2" />
+              <stop offset="55%" stopColor="white" stopOpacity="0" />
             </linearGradient>
           </defs>
           <rect x="20%" y="-100%" width="1" height="30%" fill="url(#pulseGrad)">
@@ -169,8 +169,8 @@ export default function RootLayout({
               attributeName="y"
               from="-100%"
               to="100%"
-              dur="4s"
-              begin="0s"
+              dur="6s"
+              begin=".6s"
               repeatCount="indefinite"
             />
           </rect>
@@ -179,8 +179,8 @@ export default function RootLayout({
               attributeName="y"
               from="-100%"
               to="100%"
-              dur="4s"
-              begin="1s"
+              dur="6s"
+              begin=".15s"
               repeatCount="indefinite"
             />
           </rect>
@@ -189,8 +189,8 @@ export default function RootLayout({
               attributeName="y"
               from="-100%"
               to="100%"
-              dur="4s"
-              begin="2s"
+              dur="6s"
+              begin=".3s"
               repeatCount="indefinite"
             />
           </rect>
@@ -199,8 +199,8 @@ export default function RootLayout({
               attributeName="y"
               from="-100%"
               to="100%"
-              dur="4s"
-              begin="3s"
+              dur="6s"
+              begin=".45s"
               repeatCount="indefinite"
             />
           </rect>
