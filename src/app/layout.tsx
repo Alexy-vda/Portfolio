@@ -24,12 +24,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isWIP = process.env.NEXT_PUBLIC_WIP === "true";
+
   return (
     <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative w-full`}
       >
-        <Header />
+        {!isWIP && <Header />}
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -190,7 +192,7 @@ export default function RootLayout({
               from="-100%"
               to="100%"
               dur="6s"
-              begin=".3s"
+              begin=".15s"
               repeatCount="indefinite"
             />
           </rect>
@@ -200,7 +202,7 @@ export default function RootLayout({
               from="-100%"
               to="100%"
               dur="6s"
-              begin=".45s"
+              begin=".6s"
               repeatCount="indefinite"
             />
           </rect>
