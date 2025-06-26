@@ -36,10 +36,10 @@ export default function RootLayout({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 3, ease: "easeOut" }}
-          className="absolute -top-10 left-1/2 -translate-x-1/2 -z-20 w-2xl min-h-80 bg-radial-[at_50%_00%] from-blue-700 to-black to-80% opacity-70"
+          className="absolute -top-10 left-1/2 -translate-x-1/2 -z-20 w-2xl min-h-80 bg-radial-[at_50%_00%] from-blue-700 to-blue-700/0 to-70% opacity-70"
         ></motion.span>
         <main>{children}</main>
-        <div className="fixed bottom-0 left-0 right-0 h-32 pointer-events-none z-0">
+        <div className="fixed bottom-0 w-screen h-64 pointer-events-none z-0">
           <div
             style={{
               position: "absolute",
@@ -240,6 +240,12 @@ export default function RootLayout({
             opacity="0.1"
           />
         </svg>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          className="absolute -bottom-10 left-1/2 -translate-x-1/2 -z-30 w-screen h-screen bg-linear-0 from-blue-800 to-blue-700/0 to-80% opacity-70"
+        ></motion.span>
       </body>
     </html>
   );
